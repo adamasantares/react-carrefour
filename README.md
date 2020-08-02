@@ -26,6 +26,8 @@ render () {
 
 ## Usage
 
+Install ``` npm i react-carrefour ```
+
 There are few examples
 
 **Simple IF**
