@@ -41,6 +41,10 @@ var IfFalse = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
+            var children = this.props.children;
+            if (!Array.isArray(children)) {
+                children = [children];
+            }
             var statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
             var childrenIf = [];
             var childrenElse = [];
@@ -50,7 +54,7 @@ var IfFalse = function (_React$Component) {
             var _iteratorError = undefined;
 
             try {
-                for (var _iterator = this.props.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var child = _step.value;
 
                     if (child.type && child.type.name === 'OrElse') {

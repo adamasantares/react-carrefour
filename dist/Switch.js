@@ -45,6 +45,10 @@ var Switch = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
+            var children = this.props.children;
+            if (!Array.isArray(children)) {
+                children = [children];
+            }
             var expression = this.props.expression || this.props.exp;
 
             // all values for CaseDefault
@@ -54,7 +58,7 @@ var Switch = function (_React$Component) {
             var _iteratorError = undefined;
 
             try {
-                for (var _iterator = this.props.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var child = _step.value;
 
                     allCases.push(child.props.val);
@@ -74,7 +78,7 @@ var Switch = function (_React$Component) {
                 }
             }
 
-            var children = this.props.children.map(function (child, i) {
+            children = children.map(function (child, i) {
                 if (child.type && child.type.name === 'CaseDefault') {
                     return _react2.default.cloneElement(child, {
                         key: i,
