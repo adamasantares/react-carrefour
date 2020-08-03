@@ -2,6 +2,8 @@
 
 Conditional tags for ReactJs
 
+``` npm i react-carrefour ```
+
 For those who don't like such constructions:
 
 ```
@@ -24,11 +26,16 @@ render () {
 }
 ```
 
+So I created some helpers which make my life easier:
+
+ - IfTrue + OrElse
+ - Switch + Case + CaseDefault
+ - ForEach
+
+
 ## Usage
 
-Install ``` npm i react-carrefour ```
-
-There are few examples
+There are few examples.
 
 **Simple IF**
 
@@ -102,6 +109,42 @@ function MyComponent()
                     <div>default value</div>
                 </CaseDefault>
             </Switch>
+
+        </div>
+    )
+}
+```
+
+
+
+**ForEach**
+
+```
+import { ForEach } from 'react-carrefour';
+
+function Person(props) {
+    return (
+        <div className="person">
+            Name: { props.name }
+        </div>
+    )
+}
+
+...
+
+function MyComponent()
+{
+    return (
+        <div>
+            <h1>Persons</h1>
+            {/* As a child component */}
+            <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
+                <Person/>
+            </ForEach>
+            {/* As a function */}
+            <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
+                { name => (<div className="person">Name: { props.name }</div>) }
+            </ForEach>
 
         </div>
     )
