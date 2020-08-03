@@ -19,7 +19,7 @@ class Switch extends React.Component {
         }
 
         const children = this.props.children.map((child, i) => {
-            if (child.type.name === 'CaseDefault') {
+            if (child.type && child.type.name === 'CaseDefault') {
                 return React.cloneElement(child, {
                     key: i,
                     values: allCases,

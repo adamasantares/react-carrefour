@@ -14,7 +14,7 @@ class IfTrue extends React.Component {
         const childrenElse = [];
         let swap = false;
         for (const child of this.props.children) {
-            if (child.type.name === 'OrElse') {
+            if (child.type && child.type.name === 'OrElse') {
                 swap = true;
             } else {
                 if (swap) {

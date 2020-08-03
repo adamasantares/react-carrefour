@@ -53,7 +53,7 @@ var IfTrue = function (_React$Component) {
                 for (var _iterator = this.props.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var child = _step.value;
 
-                    if (child.type.name === 'OrElse') {
+                    if (child.type && child.type.name === 'OrElse') {
                         swap = true;
                     } else {
                         if (swap) {

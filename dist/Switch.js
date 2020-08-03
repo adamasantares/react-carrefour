@@ -75,7 +75,7 @@ var Switch = function (_React$Component) {
             }
 
             var children = this.props.children.map(function (child, i) {
-                if (child.type.name === 'CaseDefault') {
+                if (child.type && child.type.name === 'CaseDefault') {
                     return _react2.default.cloneElement(child, {
                         key: i,
                         values: allCases,
