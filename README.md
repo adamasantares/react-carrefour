@@ -49,7 +49,7 @@ function MyComponent()
     return (
         <div>
             <h1>title</h1>
-            <IfTrue condition={a === 11}>
+        <IfTrue statement={a === 11}>  {/* or st={a === 11} */}
                 <div className="lalala">TEST 1</div>
             </IfTrue>
         </div>
@@ -69,7 +69,7 @@ function MyComponent()
     return (
         <div>
             <h1>title</h1>
-            <IfTrue condition={a === 11}>
+            <IfTrue st={a === 11}>
                 <div className="lalala">TEST 1</div>
             <OrElse/>
                 <div className="lalala">TEST 2</div>
@@ -92,7 +92,7 @@ function MyComponent()
         <div>
             <h1>title</h1>
 
-            <Switch expression={'lololo'}>
+            <Switch expression={'lololo'}> {/* or exp={'lololo'} */}
                 <Case val={['123', 'lololo']}>
                     <div>lololo</div>
                 </Case>
@@ -137,7 +137,7 @@ function MyComponent()
     return (
         <div>
             <h1>Persons</h1>
-            {/* As a child component */}
+            {/* As a child component. Note: "as" value must be in lower case. */}
             <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
                 <Person/>
             </ForEach>
@@ -151,6 +151,48 @@ function MyComponent()
 }
 ```
 
+**Combinations**
+
+```
+import { ForEach, IfTrue, OrElse } from 'react-carrefour';
+
+
+...
+
+function Goods()
+{
+    const goods = [
+        { title: 'Apple', type: 'good' },
+        { title: 'Banana', type: 'good' },
+        { title: 'Super Voiture', image: 'voiture.jpg', type: 'ads' },
+        { title: 'Orange', type: 'good' },
+        { title: 'Mango', type: 'good' }
+    ];
+
+    return (
+        <>
+            <h1>Goods</h1>
+            <ForEach of={goods} as="good">
+                {good => (
+                <IfTrue st={good.type === 'ads'}>
+                    <div className="goods ads">
+                        <img src={good.image} alt="" />
+                        <b>{ good.title }</b>
+                    </div>
+                <OrElse/>
+                    <div className="goods">
+                        <img src="food.jpg" alt="" />
+                        { good.title }
+                    </div>
+                </IfTrue>
+                )}
+            </ForEach>
+        </>
+    )
+}
+```
+
+
 That's it for now.
 
-Any ideas are welcome as a Pull Request :)
+Any ideas are welcome as a Pull Request :P

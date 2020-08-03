@@ -21,6 +21,9 @@ class ForEach extends React.Component {
             const _items = children.map(child => {
                 if (typeof(child) === 'function') {
                     child = child(value);
+                    const props = { key };
+                    key++;
+                    return React.cloneElement(child, props);
                 }
                 if (child.type && child.props) {
                     const props = { key };

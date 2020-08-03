@@ -51,12 +51,15 @@ var ForEach = function (_React$Component) {
                 var _items = children.map(function (child) {
                     if (typeof child === 'function') {
                         child = child(value);
-                    }
-                    if (child.type && child.props) {
                         var props = { key: key };
-                        props[argument] = value;
                         key++;
                         return _react2.default.cloneElement(child, props);
+                    }
+                    if (child.type && child.props) {
+                        var _props = { key: key };
+                        _props[argument] = value;
+                        key++;
+                        return _react2.default.cloneElement(child, _props);
                     }
                     return null;
                 }, _this2);

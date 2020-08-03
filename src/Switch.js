@@ -10,6 +10,7 @@ class Switch extends React.Component {
         if (!this.props.children) {
             return null;
         }
+        const expression = this.props.expression || this.props.exp;
 
         // all values for CaseDefault
         const allCases = [];
@@ -22,13 +23,13 @@ class Switch extends React.Component {
                 return React.cloneElement(child, {
                     key: i,
                     values: allCases,
-                    expression: this.props.expression
+                    expression
                 });
             }
             return React.cloneElement(child, {
                 key: i,
                 val: child.props.val,
-                expression: this.props.expression
+                expression
             });
         }, this);
 
@@ -46,7 +47,11 @@ Switch.propTypes = {
     expression: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    ]).isRequired,
+    ]),
+    exp: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
 };
 
 export default Switch;

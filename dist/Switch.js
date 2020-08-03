@@ -42,11 +42,10 @@ var Switch = function (_React$Component) {
     _createClass(Switch, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             if (!this.props.children) {
                 return null;
             }
+            var expression = this.props.expression || this.props.exp;
 
             // all values for CaseDefault
             var allCases = [];
@@ -80,13 +79,13 @@ var Switch = function (_React$Component) {
                     return _react2.default.cloneElement(child, {
                         key: i,
                         values: allCases,
-                        expression: _this2.props.expression
+                        expression: expression
                     });
                 }
                 return _react2.default.cloneElement(child, {
                     key: i,
                     val: child.props.val,
-                    expression: _this2.props.expression
+                    expression: expression
                 });
             }, this);
 
@@ -102,7 +101,8 @@ var Switch = function (_React$Component) {
 }(_react2.default.Component);
 
 Switch.propTypes = {
-    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired
+    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    exp: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])
 };
 
 exports.default = Switch;

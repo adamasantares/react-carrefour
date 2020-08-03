@@ -41,7 +41,7 @@ var IfTrue = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
-
+            var statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
             var childrenIf = [];
             var childrenElse = [];
             var swap = false;
@@ -78,7 +78,7 @@ var IfTrue = function (_React$Component) {
                 }
             }
 
-            if (!this.props.condition) {
+            if (!statement) {
                 if (childrenElse.length > 0) {
                     return _react2.default.createElement(
                         _react2.default.Fragment,
@@ -100,7 +100,8 @@ var IfTrue = function (_React$Component) {
 }(_react2.default.Component);
 
 IfTrue.propTypes = {
-    condition: _propTypes2.default.bool.isRequired
+    statement: _propTypes2.default.bool,
+    st: _propTypes2.default.bool
 };
 
 exports.default = IfTrue;

@@ -9,7 +9,7 @@ class IfTrue extends React.Component {
         if (!this.props.children) {
             return null;
         }
-
+        const statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
         const childrenIf = [];
         const childrenElse = [];
         let swap = false;
@@ -24,7 +24,7 @@ class IfTrue extends React.Component {
                 }
             }
         }
-        if (!this.props.condition) {
+        if (!statement) {
             if (childrenElse.length > 0) {
                 return (
                     <React.Fragment>
@@ -45,7 +45,8 @@ class IfTrue extends React.Component {
 
 
 IfTrue.propTypes = {
-    condition: PropTypes.bool.isRequired
+    statement: PropTypes.bool,
+    st: PropTypes.bool
 };
 
 export default IfTrue;

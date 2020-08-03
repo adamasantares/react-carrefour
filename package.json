@@ -1,10 +1,14 @@
 {
     "name": "react-carrefour",
-    "version": "0.0.5",
+    "version": "0.0.7",
     "description": "Conditional tags for ReactJs.",
     "keywords": ["ReactJs", "Conditional tags"],
     "author": "AdamasAntares",
     "license": "MIT",
+    "scripts": {
+        "release": "npm run prepublish && npm publish",
+        "prepublish": "babel ./src --out-dir ./dist --source-maps"
+    },
     "repository" : {
         "type" : "git",
         "url" : "https://github.com/adamasantares/react-carrefour.git"
@@ -31,8 +35,5 @@
         "react": "^16.0.0"
     },
     "homepage": "https://github.com/adamasantares/react-carrefour",
-    "scripts": {
-        "prepublish": "babel ./src --out-dir ./dist --source-maps"
-    },
     "main": "./dist/index.js"
 }
