@@ -24,6 +24,10 @@ var _CaseDefault = require('./CaseDefault');
 
 var _CaseDefault2 = _interopRequireDefault(_CaseDefault);
 
+var _ForEach = require('./ForEach');
+
+var _ForEach2 = _interopRequireDefault(_ForEach);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -32,6 +36,7 @@ module.exports = {
     OrElse: _OrElse2.default,
     Switch: _Switch2.default,
     Case: _Case2.default,
-    CaseDefault: _CaseDefault2.default
+    CaseDefault: _CaseDefault2.default,
+    ForEach: _ForEach2.default
 };
 //# sourceMappingURL=index.js.map
