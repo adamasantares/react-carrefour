@@ -10,15 +10,19 @@ class Switch extends React.Component {
         if (!this.props.children) {
             return null;
         }
+        let children = this.props.children;
+        if (!Array.isArray(children)) {
+            children = [ children ];
+        }
         const expression = this.props.expression || this.props.exp;
 
         // all values for CaseDefault
         const allCases = [];
-        for (const child of this.props.children) {
+        for (const child of children) {
             allCases.push(child.props.val);
         }
 
-        const children = this.props.children.map((child, i) => {
+        children = children.map((child, i) => {
             if (child.type && child.type.name === 'CaseDefault') {
                 return React.cloneElement(child, {
                     key: i,

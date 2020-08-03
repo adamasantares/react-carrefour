@@ -9,11 +9,15 @@ class IfFalse extends React.Component {
         if (!this.props.children) {
             return null;
         }
+        let children = this.props.children;
+        if (!Array.isArray(children)) {
+            children = [ children ];
+        }
         const statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
         const childrenIf = [];
         const childrenElse = [];
         let swap = false;
-        for (const child of this.props.children) {
+        for (const child of children) {
             if (child.type && child.type.name === 'OrElse') {
                 swap = true;
             } else {
