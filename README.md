@@ -49,7 +49,7 @@ function MyComponent()
     return (
         <div>
             <h1>title</h1>
-        <IfTrue statement={a === 11}>  {/* or st={a === 11} */}
+            <IfTrue statement={a === 11}>  {/* or st={a === 11} */}
                 <div className="lalala">TEST 1</div>
             </IfTrue>
         </div>
