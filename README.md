@@ -143,7 +143,7 @@ function MyComponent()
             </ForEach>
             {/* As a function */}
             <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
-                { name => (<div className="person">Name: { props.name }</div>) }
+                { name => (<div className="person">Name: { name }</div>) }
             </ForEach>
 
         </div>
