@@ -17,6 +17,7 @@ class Switch extends React.Component {
         }
         const expression = this.props.expression || this.props.exp;
         if (debug) console.log(`Switch (${debug}): expression is`, expression);
+        if (debug) console.log(`Switch (${debug}): total children number is ${children.length}`);
 
         // all values for CaseDefault
         const allCases = [];

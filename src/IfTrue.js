@@ -14,6 +14,7 @@ class IfTrue extends React.Component {
         if (!Array.isArray(children)) {
             children = [ children ];
         }
+        if (debug) console.log(`IfTrue (${debug}): total children number is ${children.length}`);
         const statement = typeof this.props.condition !== 'undefined' ?
             this.props.condition : (this.props.statement || this.props.st);
         const allowedChildren = [];

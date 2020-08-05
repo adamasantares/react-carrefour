@@ -17,7 +17,7 @@ class ForEach extends React.Component {
         const argument = this.props.as;
         const elements = [];
         let key = 0;
-        if (debug) console.log(`ForEach (${debug}): start`);
+        if (debug) console.log(`ForEach (${debug}): total children number is ${children.length}`);
         for (const value of this.props.of) {
             const _items = children.map(child => {
                 if (debug) console.log(`ForEach (${debug}): item ` + (child.type ? child.type.name : typeof(child)));
