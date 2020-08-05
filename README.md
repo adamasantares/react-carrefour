@@ -30,7 +30,7 @@ So I created some helpers which make my life easier:
 
  - IfTrue + OrElse
  - Switch + Case + CaseDefault
- - ForEach
+ - ForEach (just for collection)
 
 
 ## Usage
