@@ -22,6 +22,8 @@ var _CaseDefault = require('./CaseDefault');
 
 var _CaseDefault2 = _interopRequireDefault(_CaseDefault);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64,7 +66,11 @@ var Switch = function (_React$Component) {
                 for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var child = _step.value;
 
-                    allCases.push(child.props.val);
+                    var name = (0, _utils.childName)(child);
+                    if (debug) console.log('Switch (' + debug + '): child ' + name);
+                    if (name === 'Case') {
+                        allCases.push(child.props.val);
+                    }
                 }
             } catch (err) {
                 _didIteratorError = true;
@@ -84,7 +90,8 @@ var Switch = function (_React$Component) {
             if (debug) console.log('Switch (' + debug + '): cases number is ' + allCases.length);
 
             children = children.map(function (child, i) {
-                if (child.type && child.type.name === 'CaseDefault') {
+                var name = (0, _utils.childName)(child);
+                if (name === 'CaseDefault') {
                     return _react2.default.cloneElement(child, {
                         key: i,
                         values: allCases,

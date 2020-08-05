@@ -18,6 +18,8 @@ var _OrElse = require('./OrElse');
 
 var _OrElse2 = _interopRequireDefault(_OrElse);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61,7 +63,9 @@ var IfTrue = function (_React$Component) {
                     for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                         var child = _step.value;
 
-                        if (child.type && child.type.name === 'OrElse') {
+                        var name = (0, _utils.childName)(child);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + name);
+                        if (name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Start output children.');
                             orElse = true;
                         } else {
@@ -94,7 +98,9 @@ var IfTrue = function (_React$Component) {
                     for (var _iterator2 = children[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                         var _child = _step2.value;
 
-                        if (_child.type && _child.type.name === 'OrElse') {
+                        var _name = (0, _utils.childName)(_child);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name);
+                        if (_name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Break output children.');
                             break;
                         }
