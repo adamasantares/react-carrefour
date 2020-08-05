@@ -134,18 +134,22 @@ function Person(props) {
 
 function MyComponent()
 {
+    const names = ['John', 'Lucy', 'Andrea', 'Melisa'];
     return (
         <div>
             <h1>Persons</h1>
             {/* As a child component. Note: "as" value must be in lower case. */}
-            <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
+            <ForEach of={names} as="name">
                 <Person/>
             </ForEach>
             {/* As a function */}
-            <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
+            <ForEach of={names} as="name">
                 { name => (<div className="person">Name: { name }</div>) }
             </ForEach>
-
+            {/* And yes I know that in the most cases simple ".map" is enough :) */}
+            {names.map(
+                name => (<div className="person">Name: { name }</div>)
+            )}
         </div>
     )
 }
