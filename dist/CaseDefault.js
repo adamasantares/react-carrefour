@@ -84,6 +84,9 @@ var CaseDefault = function (_React$Component) {
     return CaseDefault;
 }(_react2.default.Component);
 
+CaseDefault.displayName = 'CaseDefault';
+
+
 CaseDefault.propTypes = {
     values: _propTypes2.default.array,
     expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),

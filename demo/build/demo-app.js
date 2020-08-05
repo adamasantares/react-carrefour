@@ -30096,6 +30096,9 @@ var Case = function (_React$Component) {
     return Case;
 }(_react2.default.Component);
 
+Case.displayName = 'Case';
+
+
 Case.propTypes = {
     val: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.string, _propTypes2.default.number]).isRequired,
     expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
@@ -30199,6 +30202,9 @@ var CaseDefault = function (_React$Component) {
 
     return CaseDefault;
 }(_react2.default.Component);
+
+CaseDefault.displayName = 'CaseDefault';
+
 
 CaseDefault.propTypes = {
     values: _propTypes2.default.array,
@@ -30538,6 +30544,7 @@ var OrElse = function (_React$Component) {
     return OrElse;
 }(_react2.default.Component);
 
+OrElse.displayName = 'OrElse';
 exports.default = OrElse;
 
 /***/ }),
@@ -30745,6 +30752,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.childName = childName;
 function childName(child) {
+    if (typeof child.type === 'function' && child.type.displayName) {
+        return child.type.displayName;
+    }
     if (typeof child.type === 'function' && child.type.name) {
         return child.type.name;
     }

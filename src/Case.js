@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 class Case extends React.Component {
 
+    static displayName = 'Case';
+
     render()
     {
         if (!this.props.children || !this.props.expression) {

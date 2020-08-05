@@ -8,6 +8,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.childName = childName;
 function childName(child) {
+    if (typeof child.type === 'function' && child.type.displayName) {
+        return child.type.displayName;
+    }
     if (typeof child.type === 'function' && child.type.name) {
         return child.type.name;
     }

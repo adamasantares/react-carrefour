@@ -66,6 +66,9 @@ var Case = function (_React$Component) {
     return Case;
 }(_react2.default.Component);
 
+Case.displayName = 'Case';
+
+
 Case.propTypes = {
     val: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.string, _propTypes2.default.number]).isRequired,
     expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),

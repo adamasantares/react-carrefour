@@ -37,5 +37,6 @@ var OrElse = function (_React$Component) {
     return OrElse;
 }(_react2.default.Component);
 
+OrElse.displayName = 'OrElse';
 exports.default = OrElse;
 //# sourceMappingURL=OrElse.js.map

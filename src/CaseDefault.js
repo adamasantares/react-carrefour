@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 class CaseDefault extends React.Component {
 
+    static displayName = 'CaseDefault';
+
     render()
     {
         if (!this.props.children || !this.props.expression || !this.props.values) {
