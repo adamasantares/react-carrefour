@@ -67,7 +67,7 @@ var Switch = function (_React$Component) {
                     var child = _step.value;
 
                     var name = (0, _utils.childName)(child);
-                    if (debug) console.log('Switch (' + debug + '): child ' + name);
+                    if (debug) console.log('Switch (' + debug + '): child ' + name, child);
                     if (name === 'Case') {
                         allCases.push(child.props.val);
                     }

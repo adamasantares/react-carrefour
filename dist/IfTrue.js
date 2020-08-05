@@ -64,7 +64,7 @@ var IfTrue = function (_React$Component) {
                         var child = _step.value;
 
                         var name = (0, _utils.childName)(child);
-                        if (debug) console.log('IfTrue (' + debug + '): child ' + name);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + name, child);
                         if (name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Start output children.');
                             orElse = true;
@@ -99,7 +99,7 @@ var IfTrue = function (_React$Component) {
                         var _child = _step2.value;
 
                         var _name = (0, _utils.childName)(_child);
-                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name, _child);
                         if (_name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Break output children.');
                             break;

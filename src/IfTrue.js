@@ -25,7 +25,7 @@ class IfTrue extends React.Component {
             if (debug) console.log(`IfTrue (${debug}): statement = false`);
             for (const child of children) {
                 const name = childName(child);
-                if (debug) console.log(`IfTrue (${debug}): child ${name}`);
+                if (debug) console.log(`IfTrue (${debug}): child ${name}`, child);
                 if (name === 'OrElse') {
                     if (debug) console.log(`IfTrue (${debug}): OrElse detected. Start output children.`);
                     orElse = true;
@@ -39,7 +39,7 @@ class IfTrue extends React.Component {
             if (debug) console.log(`IfTrue (${debug}): statement = true`);
             for (const child of children) {
                 const name = childName(child);
-                if (debug) console.log(`IfTrue (${debug}): child ${name}`);
+                if (debug) console.log(`IfTrue (${debug}): child ${name}`, child);
                 if (name === 'OrElse') {
                     if (debug) console.log(`IfTrue (${debug}): OrElse detected. Break output children.`);
                     break;

@@ -22,7 +22,7 @@ class ForEach extends React.Component {
         for (const value of this.props.of) {
             const _items = children.map(child => {
                 const name = childName(child);
-                if (debug) console.log(`ForEach (${debug}): item ${name}`);
+                if (debug) console.log(`ForEach (${debug}): item ${name}`, child);
                 if (typeof(child) === 'function') {
                     child = child(value);
                     const props = { key };

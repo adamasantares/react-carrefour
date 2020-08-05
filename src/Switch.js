@@ -24,7 +24,7 @@ class Switch extends React.Component {
         const allCases = [];
         for (const child of children) {
             const name = childName(child);
-            if (debug) console.log(`Switch (${debug}): child ${name}`);
+            if (debug) console.log(`Switch (${debug}): child ${name}`, child);
             if (name === 'Case') {
                 allCases.push(child.props.val);
             }

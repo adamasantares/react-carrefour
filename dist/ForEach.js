@@ -54,7 +54,7 @@ var ForEach = function (_React$Component) {
             var _loop = function _loop(value) {
                 var _items = children.map(function (child) {
                     var name = (0, _utils.childName)(child);
-                    if (debug) console.log('ForEach (' + debug + '): item ' + name);
+                    if (debug) console.log('ForEach (' + debug + '): item ' + name, child);
                     if (typeof child === 'function') {
                         child = child(value);
                         var props = { key: key };

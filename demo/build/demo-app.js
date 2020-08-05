@@ -30274,7 +30274,7 @@ var ForEach = function (_React$Component) {
             var _loop = function _loop(value) {
                 var _items = children.map(function (child) {
                     var name = (0, _utils.childName)(child);
-                    if (debug) console.log('ForEach (' + debug + '): item ' + name);
+                    if (debug) console.log('ForEach (' + debug + '): item ' + name, child);
                     if (typeof child === 'function') {
                         child = child(value);
                         var props = { key: key };
@@ -30412,7 +30412,7 @@ var IfTrue = function (_React$Component) {
                         var child = _step.value;
 
                         var name = (0, _utils.childName)(child);
-                        if (debug) console.log('IfTrue (' + debug + '): child ' + name);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + name, child);
                         if (name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Start output children.');
                             orElse = true;
@@ -30447,7 +30447,7 @@ var IfTrue = function (_React$Component) {
                         var _child = _step2.value;
 
                         var _name = (0, _utils.childName)(_child);
-                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name, _child);
                         if (_name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Break output children.');
                             break;
@@ -30619,7 +30619,7 @@ var Switch = function (_React$Component) {
                     var child = _step.value;
 
                     var name = (0, _utils.childName)(child);
-                    if (debug) console.log('Switch (' + debug + '): child ' + name);
+                    if (debug) console.log('Switch (' + debug + '): child ' + name, child);
                     if (name === 'Case') {
                         allCases.push(child.props.val);
                     }
