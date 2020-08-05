@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OrElse from './OrElse';
+import { childName } from './utils';
 
 class IfTrue extends React.Component {
 
@@ -23,7 +24,9 @@ class IfTrue extends React.Component {
         if (!statement) {
             if (debug) console.log(`IfTrue (${debug}): statement = false`);
             for (const child of children) {
-                if (child.type && child.type.name === 'OrElse') {
+                const name = childName(child);
+                if (debug) console.log(`IfTrue (${debug}): child ${name}`);
+                if (name === 'OrElse') {
                     if (debug) console.log(`IfTrue (${debug}): OrElse detected. Start output children.`);
                     orElse = true;
                 } else {
@@ -35,7 +38,9 @@ class IfTrue extends React.Component {
         } else {
             if (debug) console.log(`IfTrue (${debug}): statement = true`);
             for (const child of children) {
-                if (child.type && child.type.name === 'OrElse') {
+                const name = childName(child);
+                if (debug) console.log(`IfTrue (${debug}): child ${name}`);
+                if (name === 'OrElse') {
                     if (debug) console.log(`IfTrue (${debug}): OrElse detected. Break output children.`);
                     break;
                 }

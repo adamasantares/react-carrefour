@@ -49,7 +49,7 @@ var ForEach = function (_React$Component) {
             var argument = this.props.as;
             var elements = [];
             var key = 0;
-            if (debug) console.log('ForEach (' + debug + '): start');
+            if (debug) console.log('ForEach (' + debug + '): total children number is ' + children.length);
 
             var _loop = function _loop(value) {
                 var _items = children.map(function (child) {

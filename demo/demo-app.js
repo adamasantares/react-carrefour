@@ -105,7 +105,7 @@ function TestIfElse()
         <div className="section flex-container">
             <div className="flex-item">
                 <Code>{`
-                    <strong>Test 1</strong>
+                    <strong>Test 6</strong>
                     <IfTrue st={54 === 54}>
                         <p className="success">Element 1</p>
                         <p className="success">Element 2</p>
@@ -116,7 +116,7 @@ function TestIfElse()
                         <p className="fail">Element 6</p>
                     </IfTrue>
 
-                    <strong>Test 2 (nested if-else)</strong>
+                    <strong>Test 7 (nested if-else)</strong>
                     <IfTrue st={'test' === 'test'}>
                         <p className="success">Element 1</p>
                         <p className="success">Element 2</p>
@@ -136,8 +136,8 @@ function TestIfElse()
                 `}</Code>
             </div>
             <div className="flex-item">
-                <strong>Test 1</strong>
-                <IfTrue st={54 === 54} debug="test 1">
+                <strong>Test 6</strong>
+                <IfTrue st={54 === 54} debug="test 6">
                     <p className="success">Element 1</p>
                     <p className="success">Element 2</p>
                     <p className="success">Element 3</p>
@@ -147,12 +147,12 @@ function TestIfElse()
                     <p className="fail">Element 6</p>
                 </IfTrue>
 
-                <strong>Test 2 (nested if-else)</strong>
-                <IfTrue st={'test' === 'test'} debug="test 2.1">
+                <strong>Test 7 (nested if-else)</strong>
+                <IfTrue st={'test' === 'test'} debug="test 7.1">
                     <p className="success">Element 1</p>
                     <p className="success">Element 2</p>
                     <p className="success">Element 3</p>
-                    <IfTrue st={true === false} debug="test 2.2">
+                    <IfTrue st={true === false} debug="test 7.2">
                         <p className="fail">Sub Element 1</p>
                         <p className="fail">Sub Element 2</p>
                     <OrElse/>
@@ -179,7 +179,7 @@ function TestSwitchCase()
         <div className="section flex-container">
             <div className="flex-item">
                 <Code>{`
-                    <strong>Test 1</strong>
+                    <strong>Test 8</strong>
                     <Switch exp={'orange'}>
                         <Case val={'test'}>
                             <p className="fail">Case 1</p>
@@ -197,7 +197,7 @@ function TestSwitchCase()
                             <p className="fail">Case Default</p>
                         </CaseDefault>
                     </Switch>
-                    <strong>Test 2</strong>
+                    <strong>Test 9</strong>
                     <Switch exp={'nothing of that'}>
                         <Case val={'test'}>
                             <p className="fail">Case 1</p>
@@ -218,8 +218,8 @@ function TestSwitchCase()
                 `}</Code>
             </div>
             <div className="flex-item">
-                <strong>Test 1</strong>
-                <Switch exp={'orange'} debug="test 1">
+                <strong>Test 8</strong>
+                <Switch exp={'orange'} debug="test 8">
                     <Case val={'test'}>
                         <p className="fail">Case 1</p>
                     </Case>
@@ -236,8 +236,8 @@ function TestSwitchCase()
                         <p className="fail">Case Default</p>
                     </CaseDefault>
                 </Switch>
-                <strong>Test 2</strong>
-                <Switch exp={'nothing of that'} debug="test 2">
+                <strong>Test 9</strong>
+                <Switch exp={'nothing of that'} debug="test 9">
                     <Case val={'test'}>
                         <p className="fail">Case 1</p>
                     </Case>
@@ -282,12 +282,12 @@ function TestForEach()
 
                     ...
 
-                    <strong>Test 1</strong>
+                    <strong>Test 10</strong>
                     {/* As a child component. Note: "as" value must be in lower case. */}
                     <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name">
                         <Person/>
                     </ForEach>
-                    <strong>Test 2</strong>
+                    <strong>Test 11</strong>
                     {/* As a function */}
                     <ForEach of={ [{name:'John', age:34}, {name:'Lucy', age:25}, {name:'Melisa', age:23}]} as="person">
                     {person => (
@@ -297,14 +297,14 @@ function TestForEach()
                 `}</Code>
             </div>
             <div className="flex-item">
-                <strong>Test 1</strong>
+                <strong>Test 10</strong>
                 {/* As a child component. Note: "as" value must be in lower case. */}
-                <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name" debug="test 1">
+                <ForEach of={['John', 'Lucy', 'Andrea', 'Melisa']} as="name" debug="test 10">
                     <Person/>
                 </ForEach>
-                <strong>Test 2</strong>
+                <strong>Test 11</strong>
                 {/* As a function */}
-                <ForEach of={ [{name:'John', age:34}, {name:'Lucy', age:25}, {name:'Melisa', age:23}]} as="person" debug="test 2">
+                <ForEach of={ [{name:'John', age:34}, {name:'Lucy', age:25}, {name:'Melisa', age:23}]} as="person" debug="test 11">
                 {person => (
                     <p className="success">Name: { person.name } / Age { person.age }</p>
                 )}

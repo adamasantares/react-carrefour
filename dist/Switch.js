@@ -52,6 +52,7 @@ var Switch = function (_React$Component) {
             }
             var expression = this.props.expression || this.props.exp;
             if (debug) console.log('Switch (' + debug + '): expression is', expression);
+            if (debug) console.log('Switch (' + debug + '): total children number is ' + children.length);
 
             // all values for CaseDefault
             var allCases = [];

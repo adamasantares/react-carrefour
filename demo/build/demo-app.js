@@ -317,7 +317,7 @@ function TestIfElse() {
                 _react2.default.createElement(
                     _Code2.default,
                     null,
-                    '\n                    <strong>Test 1</strong>\n                    <IfTrue st={54 === 54}>\n                        <p className="success">Element 1</p>\n                        <p className="success">Element 2</p>\n                        <p className="success">Element 3</p>\n                    <OrElse/>\n                        <p className="fail">Element 5</p>\n                        <TestComp className="fail"/>\n                        <p className="fail">Element 6</p>\n                    </IfTrue>\n\n                    <strong>Test 2 (nested if-else)</strong>\n                    <IfTrue st={\'test\' === \'test\'}>\n                        <p className="success">Element 1</p>\n                        <p className="success">Element 2</p>\n                        <p className="success">Element 3</p>\n                        <IfTrue st={true === false}>\n                            <p className="fail">Sub Element 1</p>\n                            <p className="fail">Sub Element 2</p>\n                        <OrElse/>\n                            <p className="success">Sub Element 3</p>\n                            <p className="success">Sub Element 4</p>\n                        </IfTrue>\n                    <OrElse/>\n                        <p className="fail">Element 5</p>\n                        <TestComp className="fail"/>\n                        <p className="fail">Element 6</p>\n                    </IfTrue>\n                '
+                    '\n                    <strong>Test 6</strong>\n                    <IfTrue st={54 === 54}>\n                        <p className="success">Element 1</p>\n                        <p className="success">Element 2</p>\n                        <p className="success">Element 3</p>\n                    <OrElse/>\n                        <p className="fail">Element 5</p>\n                        <TestComp className="fail"/>\n                        <p className="fail">Element 6</p>\n                    </IfTrue>\n\n                    <strong>Test 7 (nested if-else)</strong>\n                    <IfTrue st={\'test\' === \'test\'}>\n                        <p className="success">Element 1</p>\n                        <p className="success">Element 2</p>\n                        <p className="success">Element 3</p>\n                        <IfTrue st={true === false}>\n                            <p className="fail">Sub Element 1</p>\n                            <p className="fail">Sub Element 2</p>\n                        <OrElse/>\n                            <p className="success">Sub Element 3</p>\n                            <p className="success">Sub Element 4</p>\n                        </IfTrue>\n                    <OrElse/>\n                        <p className="fail">Element 5</p>\n                        <TestComp className="fail"/>\n                        <p className="fail">Element 6</p>\n                    </IfTrue>\n                '
                 )
             ),
             _react2.default.createElement(
@@ -326,11 +326,11 @@ function TestIfElse() {
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 1'
+                    'Test 6'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.IfTrue,
-                    { st: 54 === 54, debug: 'test 1' },
+                    { st: 54 === 54, debug: 'test 6' },
                     _react2.default.createElement(
                         'p',
                         { className: 'success' },
@@ -362,11 +362,11 @@ function TestIfElse() {
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 2 (nested if-else)'
+                    'Test 7 (nested if-else)'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.IfTrue,
-                    { st: 'test' === 'test', debug: 'test 2.1' },
+                    { st: 'test' === 'test', debug: 'test 7.1' },
                     _react2.default.createElement(
                         'p',
                         { className: 'success' },
@@ -384,7 +384,7 @@ function TestIfElse() {
                     ),
                     _react2.default.createElement(
                         _reactCarrefour.IfTrue,
-                        { st: true === false, debug: 'test 2.2' },
+                        { st: true === false, debug: 'test 7.2' },
                         _react2.default.createElement(
                             'p',
                             { className: 'fail' },
@@ -443,7 +443,7 @@ function TestSwitchCase() {
                 _react2.default.createElement(
                     _Code2.default,
                     null,
-                    '\n                    <strong>Test 1</strong>\n                    <Switch exp={\'orange\'}>\n                        <Case val={\'test\'}>\n                            <p className="fail">Case 1</p>\n                        </Case>\n                        <Case val={\'orange\'}>\n                            <p className="success">Case 2</p>\n                        </Case>\n                        <Case val={[234, 54]}>\n                            <p className="fail">Case 3</p>\n                        </Case>\n                        <Case val={[\'magenta\', \'red\', \'blue\', \'orange\', \'purple\']}>\n                            <p className="success">Case 4</p>\n                        </Case>\n                        <CaseDefault>\n                            <p className="fail">Case Default</p>\n                        </CaseDefault>\n                    </Switch>\n                    <strong>Test 2</strong>\n                    <Switch exp={\'nothing of that\'}>\n                        <Case val={\'test\'}>\n                            <p className="fail">Case 1</p>\n                        </Case>\n                        <Case val={\'orange\'}>\n                            <p className="fail">Case 2</p>\n                        </Case>\n                        <Case val={[234, 54]}>\n                            <p className="fail">Case 3</p>\n                        </Case>\n                        <Case val={[\'magenta\', \'red\', \'blue\', \'orange\', \'purple\']}>\n                            <p className="fail">Case 4</p>\n                        </Case>\n                        <CaseDefault>\n                            <p className="success">Case Default</p>\n                        </CaseDefault>\n                    </Switch>\n                '
+                    '\n                    <strong>Test 8</strong>\n                    <Switch exp={\'orange\'}>\n                        <Case val={\'test\'}>\n                            <p className="fail">Case 1</p>\n                        </Case>\n                        <Case val={\'orange\'}>\n                            <p className="success">Case 2</p>\n                        </Case>\n                        <Case val={[234, 54]}>\n                            <p className="fail">Case 3</p>\n                        </Case>\n                        <Case val={[\'magenta\', \'red\', \'blue\', \'orange\', \'purple\']}>\n                            <p className="success">Case 4</p>\n                        </Case>\n                        <CaseDefault>\n                            <p className="fail">Case Default</p>\n                        </CaseDefault>\n                    </Switch>\n                    <strong>Test 9</strong>\n                    <Switch exp={\'nothing of that\'}>\n                        <Case val={\'test\'}>\n                            <p className="fail">Case 1</p>\n                        </Case>\n                        <Case val={\'orange\'}>\n                            <p className="fail">Case 2</p>\n                        </Case>\n                        <Case val={[234, 54]}>\n                            <p className="fail">Case 3</p>\n                        </Case>\n                        <Case val={[\'magenta\', \'red\', \'blue\', \'orange\', \'purple\']}>\n                            <p className="fail">Case 4</p>\n                        </Case>\n                        <CaseDefault>\n                            <p className="success">Case Default</p>\n                        </CaseDefault>\n                    </Switch>\n                '
                 )
             ),
             _react2.default.createElement(
@@ -452,11 +452,11 @@ function TestSwitchCase() {
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 1'
+                    'Test 8'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.Switch,
-                    { exp: 'orange', debug: 'test 1' },
+                    { exp: 'orange', debug: 'test 8' },
                     _react2.default.createElement(
                         _reactCarrefour.Case,
                         { val: 'test' },
@@ -506,11 +506,11 @@ function TestSwitchCase() {
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 2'
+                    'Test 9'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.Switch,
-                    { exp: 'nothing of that', debug: 'test 2' },
+                    { exp: 'nothing of that', debug: 'test 9' },
                     _react2.default.createElement(
                         _reactCarrefour.Case,
                         { val: 'test' },
@@ -589,7 +589,7 @@ function TestForEach() {
                 _react2.default.createElement(
                     _Code2.default,
                     null,
-                    '\n                    function Person(props) {\n                        return (<p className="success">Name: { props.name }</p>)\n                    }\n\n                    ...\n\n                    <strong>Test 1</strong>\n                    {/* As a child component. Note: "as" value must be in lower case. */}\n                    <ForEach of={[\'John\', \'Lucy\', \'Andrea\', \'Melisa\']} as="name">\n                        <Person/>\n                    </ForEach>\n                    <strong>Test 2</strong>\n                    {/* As a function */}\n                    <ForEach of={ [{name:\'John\', age:34}, {name:\'Lucy\', age:25}, {name:\'Melisa\', age:23}]} as="person">\n                    {person => (\n                        <p className="success">Name: { person.name } / Age { person.age }</p>\n                    )}\n                    </ForEach>\n                '
+                    '\n                    function Person(props) {\n                        return (<p className="success">Name: { props.name }</p>)\n                    }\n\n                    ...\n\n                    <strong>Test 10</strong>\n                    {/* As a child component. Note: "as" value must be in lower case. */}\n                    <ForEach of={[\'John\', \'Lucy\', \'Andrea\', \'Melisa\']} as="name">\n                        <Person/>\n                    </ForEach>\n                    <strong>Test 11</strong>\n                    {/* As a function */}\n                    <ForEach of={ [{name:\'John\', age:34}, {name:\'Lucy\', age:25}, {name:\'Melisa\', age:23}]} as="person">\n                    {person => (\n                        <p className="success">Name: { person.name } / Age { person.age }</p>\n                    )}\n                    </ForEach>\n                '
                 )
             ),
             _react2.default.createElement(
@@ -598,21 +598,21 @@ function TestForEach() {
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 1'
+                    'Test 10'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.ForEach,
-                    { of: ['John', 'Lucy', 'Andrea', 'Melisa'], as: 'name', debug: 'test 1' },
+                    { of: ['John', 'Lucy', 'Andrea', 'Melisa'], as: 'name', debug: 'test 10' },
                     _react2.default.createElement(Person, null)
                 ),
                 _react2.default.createElement(
                     'strong',
                     null,
-                    'Test 2'
+                    'Test 11'
                 ),
                 _react2.default.createElement(
                     _reactCarrefour.ForEach,
-                    { of: [{ name: 'John', age: 34 }, { name: 'Lucy', age: 25 }, { name: 'Melisa', age: 23 }], as: 'person', debug: 'test 2' },
+                    { of: [{ name: 'John', age: 34 }, { name: 'Lucy', age: 25 }, { name: 'Melisa', age: 23 }], as: 'person', debug: 'test 11' },
                     function (person) {
                         return _react2.default.createElement(
                             'p',
@@ -30224,8 +30224,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -30235,6 +30233,8 @@ var _react2 = _interopRequireDefault(_react);
 var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _utils = __webpack_require__(/*! ./utils */ "./src/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30269,11 +30269,12 @@ var ForEach = function (_React$Component) {
             var argument = this.props.as;
             var elements = [];
             var key = 0;
-            if (debug) console.log('ForEach (' + debug + '): start');
+            if (debug) console.log('ForEach (' + debug + '): total children number is ' + children.length);
 
             var _loop = function _loop(value) {
                 var _items = children.map(function (child) {
-                    if (debug) console.log('ForEach (' + debug + '): item ' + (child.type ? child.type.name : typeof child === 'undefined' ? 'undefined' : _typeof(child)));
+                    var name = (0, _utils.childName)(child);
+                    if (debug) console.log('ForEach (' + debug + '): item ' + name);
                     if (typeof child === 'function') {
                         child = child(value);
                         var props = { key: key };
@@ -30365,6 +30366,8 @@ var _OrElse = __webpack_require__(/*! ./OrElse */ "./src/OrElse.js");
 
 var _OrElse2 = _interopRequireDefault(_OrElse);
 
+var _utils = __webpack_require__(/*! ./utils */ "./src/utils.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30393,6 +30396,7 @@ var IfTrue = function (_React$Component) {
             if (!Array.isArray(children)) {
                 children = [children];
             }
+            if (debug) console.log('IfTrue (' + debug + '): total children number is ' + children.length);
             var statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
             var allowedChildren = [];
             var orElse = false;
@@ -30407,7 +30411,9 @@ var IfTrue = function (_React$Component) {
                     for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                         var child = _step.value;
 
-                        if (child.type && child.type.name === 'OrElse') {
+                        var name = (0, _utils.childName)(child);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + name);
+                        if (name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Start output children.');
                             orElse = true;
                         } else {
@@ -30440,7 +30446,9 @@ var IfTrue = function (_React$Component) {
                     for (var _iterator2 = children[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                         var _child = _step2.value;
 
-                        if (_child.type && _child.type.name === 'OrElse') {
+                        var _name = (0, _utils.childName)(_child);
+                        if (debug) console.log('IfTrue (' + debug + '): child ' + _name);
+                        if (_name === 'OrElse') {
                             if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Break output children.');
                             break;
                         }
@@ -30566,6 +30574,8 @@ var _CaseDefault = __webpack_require__(/*! ./CaseDefault */ "./src/CaseDefault.j
 
 var _CaseDefault2 = _interopRequireDefault(_CaseDefault);
 
+var _utils = __webpack_require__(/*! ./utils */ "./src/utils.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30596,6 +30606,7 @@ var Switch = function (_React$Component) {
             }
             var expression = this.props.expression || this.props.exp;
             if (debug) console.log('Switch (' + debug + '): expression is', expression);
+            if (debug) console.log('Switch (' + debug + '): total children number is ' + children.length);
 
             // all values for CaseDefault
             var allCases = [];
@@ -30607,7 +30618,11 @@ var Switch = function (_React$Component) {
                 for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var child = _step.value;
 
-                    allCases.push(child.props.val);
+                    var name = (0, _utils.childName)(child);
+                    if (debug) console.log('Switch (' + debug + '): child ' + name);
+                    if (name === 'Case') {
+                        allCases.push(child.props.val);
+                    }
                 }
             } catch (err) {
                 _didIteratorError = true;
@@ -30627,7 +30642,8 @@ var Switch = function (_React$Component) {
             if (debug) console.log('Switch (' + debug + '): cases number is ' + allCases.length);
 
             children = children.map(function (child, i) {
-                if (child.type && child.type.name === 'CaseDefault') {
+                var name = (0, _utils.childName)(child);
+                if (name === 'CaseDefault') {
                     return _react2.default.cloneElement(child, {
                         key: i,
                         values: allCases,
@@ -30708,6 +30724,38 @@ module.exports = {
     CaseDefault: _CaseDefault2.default,
     ForEach: _ForEach2.default
 };
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.childName = childName;
+function childName(child) {
+    if (typeof child.type === 'function' && child.type.name) {
+        return child.type.name;
+    }
+    if (typeof child.type === 'string') {
+        return child.type;
+    }
+    if (child['$$typeof'] && _typeof(child['$$typeof']) === 'symbol') {
+        return child['$$typeof'].description;
+    }
+    return typeof child === 'undefined' ? 'undefined' : _typeof(child);
+}
 
 /***/ })
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { childName } from './utils';
 
 
 class ForEach extends React.Component {
@@ -20,7 +21,8 @@ class ForEach extends React.Component {
         if (debug) console.log(`ForEach (${debug}): total children number is ${children.length}`);
         for (const value of this.props.of) {
             const _items = children.map(child => {
-                if (debug) console.log(`ForEach (${debug}): item ` + (child.type ? child.type.name : typeof(child)));
+                const name = childName(child);
+                if (debug) console.log(`ForEach (${debug}): item ${name}`);
                 if (typeof(child) === 'function') {
                     child = child(value);
                     const props = { key };

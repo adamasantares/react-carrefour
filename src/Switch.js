@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Case from './Case';
 import CaseDefault from './CaseDefault';
+import { childName } from './utils';
 
 class Switch extends React.Component {
 
@@ -22,12 +23,17 @@ class Switch extends React.Component {
         // all values for CaseDefault
         const allCases = [];
         for (const child of children) {
-            allCases.push(child.props.val);
+            const name = childName(child);
+            if (debug) console.log(`Switch (${debug}): child ${name}`);
+            if (name === 'Case') {
+                allCases.push(child.props.val);
+            }
         }
         if (debug) console.log(`Switch (${debug}): cases number is ${allCases.length}`);
 
         children = children.map((child, i) => {
-            if (child.type && child.type.name === 'CaseDefault') {
+            const name = childName(child);
+            if (name === 'CaseDefault') {
                 return React.cloneElement(child, {
                     key: i,
                     values: allCases,
