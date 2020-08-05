@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -39,6 +41,7 @@ var ForEach = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
+            var debug = this.props.debug || false;
             var children = this.props.children;
             if (!Array.isArray(children)) {
                 children = [children];
@@ -46,9 +49,11 @@ var ForEach = function (_React$Component) {
             var argument = this.props.as;
             var elements = [];
             var key = 0;
+            if (debug) console.log('ForEach (' + debug + '): start');
 
             var _loop = function _loop(value) {
                 var _items = children.map(function (child) {
+                    if (debug) console.log('ForEach (' + debug + '): item ' + (child.type ? child.type.name : typeof child === 'undefined' ? 'undefined' : _typeof(child)));
                     if (typeof child === 'function') {
                         child = child(value);
                         var props = { key: key };
@@ -104,7 +109,8 @@ var ForEach = function (_React$Component) {
 
 ForEach.propTypes = {
     of: _propTypes2.default.array.isRequired,
-    as: _propTypes2.default.string.isRequired
+    as: _propTypes2.default.string.isRequired,
+    debug: _propTypes2.default.string
 };
 
 exports.default = ForEach;

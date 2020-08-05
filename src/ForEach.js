@@ -9,6 +9,7 @@ class ForEach extends React.Component {
         if (!this.props.children) {
             return null;
         }
+        const debug = this.props.debug || false;
         let children = this.props.children;
         if (!Array.isArray(children)) {
             children = [ children ];
@@ -16,9 +17,10 @@ class ForEach extends React.Component {
         const argument = this.props.as;
         const elements = [];
         let key = 0;
-
+        if (debug) console.log(`ForEach (${debug}): start`);
         for (const value of this.props.of) {
             const _items = children.map(child => {
+                if (debug) console.log(`ForEach (${debug}): item ` + (child.type ? child.type.name : typeof(child)));
                 if (typeof(child) === 'function') {
                     child = child(value);
                     const props = { key };
@@ -47,7 +49,8 @@ class ForEach extends React.Component {
 
 ForEach.propTypes = {
     of: PropTypes.array.isRequired,
-    as: PropTypes.string.isRequired
+    as: PropTypes.string.isRequired,
+    debug: PropTypes.string
 };
 
 export default ForEach;

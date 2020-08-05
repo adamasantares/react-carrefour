@@ -193,6 +193,12 @@ function Goods()
 ```
 
 
-That's it for now.
+Check the demo page for more examples:
+
+```
+$ git clone https://github.com/adamasantares/react-carrefour.git
+$ npm install
+$ npm run demo
+```
 
 Any ideas are welcome as a Pull Request :P

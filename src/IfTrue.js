@@ -9,40 +9,41 @@ class IfTrue extends React.Component {
         if (!this.props.children) {
             return null;
         }
+        const debug = this.props.debug || false;
         let children = this.props.children;
         if (!Array.isArray(children)) {
             children = [ children ];
         }
-        const statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
-        const childrenIf = [];
-        const childrenElse = [];
-        let swap = false;
-        for (const child of children) {
-            if (child.type && child.type.name === 'OrElse') {
-                swap = true;
-            } else {
-                if (swap) {
-                    childrenElse.push(child);
+        const statement = typeof this.props.condition !== 'undefined' ?
+            this.props.condition : (this.props.statement || this.props.st);
+        const allowedChildren = [];
+        let orElse = false;
+        // TODO REDO React.Children.map(children, (child, i) ?
+        if (!statement) {
+            if (debug) console.log(`IfTrue (${debug}): statement = false`);
+            for (const child of children) {
+                if (child.type && child.type.name === 'OrElse') {
+                    if (debug) console.log(`IfTrue (${debug}): OrElse detected. Start output children.`);
+                    orElse = true;
                 } else {
-                    childrenIf.push(child);
+                    if (orElse) {
+                        allowedChildren.push(child);
+                    }
                 }
             }
-        }
-        if (!statement) {
-            if (childrenElse.length > 0) {
-                return (
-                    <React.Fragment>
-                        { childrenElse }
-                    </React.Fragment>
-                )
+        } else {
+            if (debug) console.log(`IfTrue (${debug}): statement = true`);
+            for (const child of children) {
+                if (child.type && child.type.name === 'OrElse') {
+                    if (debug) console.log(`IfTrue (${debug}): OrElse detected. Break output children.`);
+                    break;
+                }
+                allowedChildren.push(child);
             }
-            return null;
         }
-        return (
-            <React.Fragment>
-                { childrenIf }
-            </React.Fragment>
-        )
+        if (debug) console.log(`IfTrue (${debug}): result number of children is ${allowedChildren.length}`);
+        return allowedChildren.length > 0 ?
+            (<React.Fragment>{ allowedChildren }</React.Fragment>) : null;
     }
 
 }
@@ -50,7 +51,8 @@ class IfTrue extends React.Component {
 
 IfTrue.propTypes = {
     statement: PropTypes.bool,
-    st: PropTypes.bool
+    st: PropTypes.bool,
+    debug: PropTypes.string
 };
 
 export default IfTrue;

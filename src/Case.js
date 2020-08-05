@@ -9,14 +9,19 @@ class Case extends React.Component {
         if (!this.props.children || !this.props.expression) {
             return null;
         }
+        const debug = this.props.debug || false;
         if (Array.isArray(this.props.val)) {
             if (this.props.val.includes(this.props.expression)) {
+                if (debug) console.log(`Case "${this.props.val.join(',')}": match case`);
                 return (<React.Fragment>{ this.props.children }</React.Fragment>);
             }
+            if (debug) console.log(`Case "${this.props.val.join(',')}": no match`);
         } else {
             if (this.props.expression === this.props.val) {
+                if (debug) console.log(`Case "${this.props.val}": match case`);
                 return (<React.Fragment>{ this.props.children }</React.Fragment>);
             }
+            if (debug) console.log(`Case "${this.props.val}": no match`);
         }
         return null;
     }
@@ -26,10 +31,8 @@ class Case extends React.Component {
 
 Case.propTypes = {
     val: PropTypes.oneOfType([
-        PropTypes.arrayOf(
-            PropTypes.string,
-            PropTypes.number
-        ),
+        PropTypes.arrayOf(PropTypes.string),
+        PropTypes.arrayOf(PropTypes.number),
         PropTypes.string,
         PropTypes.number
     ]).isRequired,
@@ -37,6 +40,7 @@ Case.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
+    debug: PropTypes.string
 };
 
 export default Case;

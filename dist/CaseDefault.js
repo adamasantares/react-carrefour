@@ -37,6 +37,7 @@ var CaseDefault = function (_React$Component) {
             if (!this.props.children || !this.props.expression || !this.props.values) {
                 return null;
             }
+            var debug = this.props.debug || false;
             var hasMatch = false;
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
@@ -71,6 +72,7 @@ var CaseDefault = function (_React$Component) {
                 }
             }
 
+            if (debug && !hasMatch) console.log('CaseDefault: no any other matches');
             return hasMatch ? null : _react2.default.createElement(
                 _react2.default.Fragment,
                 null,
@@ -84,7 +86,8 @@ var CaseDefault = function (_React$Component) {
 
 CaseDefault.propTypes = {
     values: _propTypes2.default.array,
-    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])
+    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    debug: _propTypes2.default.string
 };
 
 exports.default = CaseDefault;

@@ -37,22 +37,27 @@ var Case = function (_React$Component) {
             if (!this.props.children || !this.props.expression) {
                 return null;
             }
+            var debug = this.props.debug || false;
             if (Array.isArray(this.props.val)) {
                 if (this.props.val.includes(this.props.expression)) {
+                    if (debug) console.log('Case "' + this.props.val.join(',') + '": match case');
                     return _react2.default.createElement(
                         _react2.default.Fragment,
                         null,
                         this.props.children
                     );
                 }
+                if (debug) console.log('Case "' + this.props.val.join(',') + '": no match');
             } else {
                 if (this.props.expression === this.props.val) {
+                    if (debug) console.log('Case "' + this.props.val + '": match case');
                     return _react2.default.createElement(
                         _react2.default.Fragment,
                         null,
                         this.props.children
                     );
                 }
+                if (debug) console.log('Case "' + this.props.val + '": no match');
             }
             return null;
         }
@@ -62,8 +67,9 @@ var Case = function (_React$Component) {
 }(_react2.default.Component);
 
 Case.propTypes = {
-    val: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string, _propTypes2.default.number), _propTypes2.default.string, _propTypes2.default.number]).isRequired,
-    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])
+    val: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.string, _propTypes2.default.number]).isRequired,
+    expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    debug: _propTypes2.default.string
 };
 
 exports.default = Case;

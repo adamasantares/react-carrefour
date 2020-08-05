@@ -41,62 +41,85 @@ var IfTrue = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
+            var debug = this.props.debug || false;
             var children = this.props.children;
             if (!Array.isArray(children)) {
                 children = [children];
             }
             var statement = typeof this.props.condition !== 'undefined' ? this.props.condition : this.props.statement || this.props.st;
-            var childrenIf = [];
-            var childrenElse = [];
-            var swap = false;
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
+            var allowedChildren = [];
+            var orElse = false;
+            // TODO REDO React.Children.map(children, (child, i) ?
+            if (!statement) {
+                if (debug) console.log('IfTrue (' + debug + '): statement = false');
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
 
-            try {
-                for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var child = _step.value;
+                try {
+                    for (var _iterator = children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var child = _step.value;
 
-                    if (child.type && child.type.name === 'OrElse') {
-                        swap = true;
-                    } else {
-                        if (swap) {
-                            childrenElse.push(child);
+                        if (child.type && child.type.name === 'OrElse') {
+                            if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Start output children.');
+                            orElse = true;
                         } else {
-                            childrenIf.push(child);
+                            if (orElse) {
+                                allowedChildren.push(child);
+                            }
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
+                        }
+                    } finally {
+                        if (_didIteratorError) {
+                            throw _iteratorError;
                         }
                     }
                 }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
+            } else {
+                if (debug) console.log('IfTrue (' + debug + '): statement = true');
+                var _iteratorNormalCompletion2 = true;
+                var _didIteratorError2 = false;
+                var _iteratorError2 = undefined;
 
-            if (!statement) {
-                if (childrenElse.length > 0) {
-                    return _react2.default.createElement(
-                        _react2.default.Fragment,
-                        null,
-                        childrenElse
-                    );
+                try {
+                    for (var _iterator2 = children[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                        var _child = _step2.value;
+
+                        if (_child.type && _child.type.name === 'OrElse') {
+                            if (debug) console.log('IfTrue (' + debug + '): OrElse detected. Break output children.');
+                            break;
+                        }
+                        allowedChildren.push(_child);
+                    }
+                } catch (err) {
+                    _didIteratorError2 = true;
+                    _iteratorError2 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                            _iterator2.return();
+                        }
+                    } finally {
+                        if (_didIteratorError2) {
+                            throw _iteratorError2;
+                        }
+                    }
                 }
-                return null;
             }
-            return _react2.default.createElement(
+            if (debug) console.log('IfTrue (' + debug + '): result number of children is ' + allowedChildren.length);
+            return allowedChildren.length > 0 ? _react2.default.createElement(
                 _react2.default.Fragment,
                 null,
-                childrenIf
-            );
+                allowedChildren
+            ) : null;
         }
     }]);
 
@@ -105,7 +128,8 @@ var IfTrue = function (_React$Component) {
 
 IfTrue.propTypes = {
     statement: _propTypes2.default.bool,
-    st: _propTypes2.default.bool
+    st: _propTypes2.default.bool,
+    debug: _propTypes2.default.string
 };
 
 exports.default = IfTrue;

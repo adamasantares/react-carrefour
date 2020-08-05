@@ -45,11 +45,13 @@ var Switch = function (_React$Component) {
             if (!this.props.children) {
                 return null;
             }
+            var debug = this.props.debug || false;
             var children = this.props.children;
             if (!Array.isArray(children)) {
                 children = [children];
             }
             var expression = this.props.expression || this.props.exp;
+            if (debug) console.log('Switch (' + debug + '): expression is', expression);
 
             // all values for CaseDefault
             var allCases = [];
@@ -78,18 +80,22 @@ var Switch = function (_React$Component) {
                 }
             }
 
+            if (debug) console.log('Switch (' + debug + '): cases number is ' + allCases.length);
+
             children = children.map(function (child, i) {
                 if (child.type && child.type.name === 'CaseDefault') {
                     return _react2.default.cloneElement(child, {
                         key: i,
                         values: allCases,
-                        expression: expression
+                        expression: expression,
+                        debug: debug
                     });
                 }
                 return _react2.default.cloneElement(child, {
                     key: i,
                     val: child.props.val,
-                    expression: expression
+                    expression: expression,
+                    debug: debug
                 });
             }, this);
 
@@ -106,7 +112,8 @@ var Switch = function (_React$Component) {
 
 Switch.propTypes = {
     expression: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    exp: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])
+    exp: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    debug: _propTypes2.default.string
 };
 
 exports.default = Switch;

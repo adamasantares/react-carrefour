@@ -1,11 +1,12 @@
 {
     "name": "react-carrefour",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "Conditional tags for ReactJs.",
     "keywords": ["ReactJs", "Conditional tags"],
     "author": "AdamasAntares",
     "license": "MIT",
     "scripts": {
+        "demo": "webpack --config demo/webpack.config.js --mode=development && ./demo/openpage.sh",
         "release": "npm run prepublish && npm publish",
         "prepare": "babel ./src --out-dir ./dist --source-maps"
     },

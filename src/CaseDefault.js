@@ -9,6 +9,7 @@ class CaseDefault extends React.Component {
         if (!this.props.children || !this.props.expression || !this.props.values) {
             return null;
         }
+        const debug = this.props.debug || false;
         let hasMatch = false;
         for (const val of this.props.values) {
             if (Array.isArray(val)) {
@@ -21,6 +22,7 @@ class CaseDefault extends React.Component {
                 }
             }
         }
+        if (debug && !hasMatch) console.log(`CaseDefault: no any other matches`);
         return hasMatch ?
             null : (<React.Fragment>{ this.props.children }</React.Fragment>);
     }
@@ -34,6 +36,7 @@ CaseDefault.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
+    debug: PropTypes.string
 };
 
 export default CaseDefault;

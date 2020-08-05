@@ -4,10 +4,6 @@ var _IfTrue = require('./IfTrue');
 
 var _IfTrue2 = _interopRequireDefault(_IfTrue);
 
-var _IfFalse = require('./IfFalse');
-
-var _IfFalse2 = _interopRequireDefault(_IfFalse);
-
 var _OrElse = require('./OrElse');
 
 var _OrElse2 = _interopRequireDefault(_OrElse);
@@ -32,7 +28,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 module.exports = {
     IfTrue: _IfTrue2.default,
-    IfFalse: _IfFalse2.default,
     OrElse: _OrElse2.default,
     Switch: _Switch2.default,
     Case: _Case2.default,
